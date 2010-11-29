@@ -1,0 +1,8 @@
+Meta Detect
+Checks pages for a user specified <meta> tag and displays its value
+
+My first attempt at a Google Chrome extension :)
+
+TODO
+
+1. Add localization

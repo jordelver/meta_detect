@@ -1,0 +1,25 @@
+{
+  "name" : "Meta Detect",
+  "version" : "0.0.1",
+  "description" : "Checks pages for a user specified <meta> tag and displays its value",
+  "background_page" : "background.html",
+  "options_page" : "options.html",
+  "page_action": {
+    "default_icon" : "icons/meta.png",
+    "popup" : "popup.html"
+  },
+  "content_scripts" : [
+    {
+      "matches" : [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js" : [
+        "js/contentscript.js"
+      ]
+    }
+  ],  
+  "permissions" : [
+    "tabs"
+  ]
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var metaTag;
+chrome.extension.onRequest.addListener(
+  function(request, sender, sendResponse) {
+    switch(request.action)
+    {
+      case "setMetaTag":
+        metaTag = request.metaTag;
+        chrome.pageAction.show(sender.tab.id);
+        sendResponse({}); // clean up connection by sending empty response
+        break;
+      case "getMetaTag":
+        sendResponse({ "metaTag" : metaTag });
+        break;
+      case "getConfig":
+        sendResponse({ "metaTagName" : localStorage['meta_tag_name'] });
+        break;
+    }
+  }
+);
+</script>
+</head>
+</html>

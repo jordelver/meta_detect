@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Meta Detect Options</title>
+<style>
+body {
+  font-family: sans-serif;
+  background: #eee;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+input {
+  padding: 4px;
+  width: 170px;
+  font-size: 14px;
+}
+
+button {
+  padding: 4px;
+  font-size: 14px;
+}
+
+#status {
+  background: lightyellow;
+  border: 1px solid yellow;
+  padding: 6px 6px 4px 6px;
+  width: 168px;
+  color: #333;
+  font-size: 14px;
+  display: none;
+}
+</style>
+<script src="js/options.js"></script>
+</head>
+<body>
+
+<h1>Meta Detect</h1>
+
+<p>Enter a <strong><code>&lt;meta&gt;</code></strong> tag name that you want to detect on pages</p>
+
+<p>
+  <input type="text" id="meta_tag_name" />
+  <button id="save">Save</button>
+</p>
+
+<p id="status">Meta tag name saved</p>
+
+<script>
+window.onload = function() {
+  Options.restore('meta_tag_name');
+};
+
+document.getElementById('save').onclick = function() {
+  Options.save('meta_tag_name');
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 250px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+p { padding: 6px; }
+</style>
+</head>
+<body>
+
+<script>
+chrome.extension.sendRequest({ "action" : "getMetaTag" }, function(response) {
+  var content = "<p>" + response.metaTag.name + ": <strong>" + response.metaTag.value + "</strong></p>";
+  document.getElementById("meta-tag-value").innerHTML = content;
+});
+</script>
+
+<p id="meta-tag-value"></p>
+
+</body>
+</html>
